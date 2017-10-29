@@ -1,0 +1,92 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link href="/style/style.css" rel="stylesheet"/>
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>Solid</title>
+</head>
+<body>
+<div id="index">
+  <md-toolbar>
+    <md-button class="md-icon-button" @click="toggleSidenav">
+      <md-icon>menu</md-icon>
+    </md-button>
+    <h2 class="md-title" style="flex: 1">Solid</h2>
+  </md-toolbar>
+  <md-sidenav class="md-left" ref="sidenav">
+    <md-toolbar>
+      <div class="md-toolbar-container">
+        <h3 class="md-title">
+          <md-icon>info_outline</md-icon>
+          Navigation
+        </h3>
+      </div>
+    </md-toolbar>
+    <md-list>
+      <md-list-item href="https://yukkurisinai.net">
+        <md-icon>face</md-icon>
+        <span>Admin</span>
+      </md-list-item>
+      <md-list-item href="mailto:yukkuri.sinai@gmail.com">
+        <md-icon>contact_mail</md-icon>
+        <span>Contact</span>
+      </md-list-item>
+      <md-list-item @click="$refs.donate.open()">
+        <md-icon>thumb_up</md-icon>
+        <span>Donate</span>
+      </md-list-item>
+    </md-list>
+  </md-sidenav>
+  <md-dialog-alert
+          md-content-html="<h3>Ethereum Address</h3><p><a href='https://etherscan.io/address/0xc3500484544e37CfFdD6aCb8E779DC1FFDeA99AD'>0xc3500484544e37CfFdD6aCb8E779DC1FFDeA99AD</a></p>"
+          md-ok-text="OK"
+          ref="donate">
+  </md-dialog-alert>
+  <md-snackbar md-position="top center" ref="error" md-duration="4000">
+    <span>Something's wrong.</span>
+    <md-button class="md-accent" @click="$refs.error.close()">OK</md-button>
+  </md-snackbar>
+  <div class="main-content">
+    <md-card>
+      <md-card-header>
+        <div class="md-title">Solid</div>
+        <div class="md-subhead">Create your own ERC-20 Token.</div>
+      </md-card-header>
+      <md-card-content>
+        <div v-if="initialized()">
+          <form @submit.stop.prevent="submit">
+            <md-input-container>
+              <label>Token name</label>
+              <md-input v-model="name" required></md-input>
+            </md-input-container>
+            <md-input-container>
+              <label>Token symbol</label>
+              <md-input v-model="symbol" required></md-input>
+            </md-input-container>
+            <md-input-container>
+              <label>Total amount</label>
+              <md-input v-model="amount" type="number" min="1" required></md-input>
+            </md-input-container>
+            <md-input-container>
+              <label>Decimals</label>
+              <md-input v-model="decimals" type="number" min="0" max="18" required></md-input>
+            </md-input-container>
+            <md-input-container>
+              <label>Rate for 1ETH.</label>
+              <md-input v-model="rate" type="rate" min="1" required></md-input>
+            </md-input-container>
+            <md-button class="md-raised md-primary" type="submit">Create !</md-button>
+          </form>
+        </div>
+        <div v-else>
+          <p>now initializing...</p>
+          <md-spinner md-indeterminate></md-spinner>
+        </div>
+      </md-card-content>
+    </md-card>
+  </div>
+</div>
+<script src="/js/index.bundle.js"></script>
+</body>
+</html>
