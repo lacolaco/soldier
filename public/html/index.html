@@ -4,7 +4,7 @@
   <meta name="viewport" content="width=device-width">
   <link href="/style/style.css" rel="stylesheet"/>
   <link rel="shortcut icon" href="favicon.ico">
-  <title>Solid</title>
+  <title>Soldier</title>
 </head>
 <body>
 <div id="index">
@@ -12,7 +12,7 @@
     <md-button class="md-icon-button" @click="toggleSidenav">
       <md-icon>menu</md-icon>
     </md-button>
-    <h2 class="md-title" style="flex: 1">Solid</h2>
+    <h2 class="md-title" style="flex: 1">Soldier</h2>
   </md-toolbar>
   <md-sidenav class="md-left" ref="sidenav">
     <md-toolbar>
@@ -50,11 +50,12 @@
   <div class="main-content">
     <md-card>
       <md-card-header>
-        <div class="md-title">Solid</div>
+        <div class="md-title">Soldier</div>
         <div class="md-subhead">Create your own ERC-20 Token.</div>
       </md-card-header>
       <md-card-content>
         <div v-if="initialized()">
+          <p>This service create only source code written by solidity. You can edit, fix, compile and run them on <a href="https://remix.ethereum.org">remix</a> and etc.</p>
           <form @submit.stop.prevent="submit">
             <md-input-container>
               <label>Token name</label>

@@ -1,7 +1,7 @@
 {
-  "name": "payment",
+  "name": "soldier",
   "version": "1.0.0",
-  "description": "payment",
+  "description": "soldier",
   "main": "index.js",
   "scripts": {
     "build:babel": "babel src/server -d dest/server",
@@ -20,14 +20,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/C-130/Payment.git"
+    "url": "git+ssh://git@github.com/yukkurisinai/soldier.git"
   },
   "author": "yukkuri_sinai",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/C-130/Paymentissues"
+    "url": "https://github.com/yukkurisinai/soldier#issues"
   },
-  "homepage": "https://github.com/C-130/Payment#readme",
+  "homepage": "https://github.com/yukkurisinai/soldier#readme",
   "dependencies": {
     "axios": "^0.16.2",
     "body-parser": "^1.17.2",

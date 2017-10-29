@@ -1,0 +1,12 @@
+{
+  "name": "Solid",
+  "alias": [
+    "soldier.solidity.codes"
+  ],
+  "files": [
+    "config/config.json",
+    "src",
+    "public",
+    "webpack.config.js"
+  ]
+}
