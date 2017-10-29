@@ -1,4 +1,4 @@
-# Solid
+# soldier
 
 Web service to create ERC-20 Token.
 
