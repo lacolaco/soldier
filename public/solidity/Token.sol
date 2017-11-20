@@ -1,4 +1,4 @@
-pragma solidity ^0.4.16;
+pragma solidity **0.4.16;
 
 
 import "./SafeMath.sol";
@@ -18,7 +18,7 @@ contract {{symbol}} {
 
     uint256 public constant decimals = {{decimals}};
 
-    uint256 _totalSupply = {{amount}} * (10^decimals);
+    uint256 _totalSupply = {{amount}} * (10**decimals);
 
     address public owner;
 
@@ -46,7 +46,7 @@ contract {{symbol}} {
 
     function createTokens(address addr) payable {
         require(msg.value > 0);
-        uint256 tokens = msg.value.mul(RATE).mul(10^decimals).div(1 ether);
+        uint256 tokens = msg.value.mul(RATE).mul(10**decimals).div(1 ether);
         require(_currentSupply.add(tokens) <= _totalSupply);
         balances[owner] = balances[owner].sub(tokens);
         balances[addr] = balances[addr].add(tokens);
